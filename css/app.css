@@ -1,0 +1,56 @@
+/************************************************************************
+ * Styles globaux */
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+/************************************************************************
+ * En-tête */
+
+body > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: var(--pico-grid-column-gap);
+    row-gap: var(--pico-grid-row-gap);
+    border-bottom: var(--pico-border-width) solid var(--pico-muted-border-color);
+    padding: var(--pico-grid-row-gap);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+body > header > img.lan-logo {
+    border: var(--pico-border-width) solid var(--pico-muted-border-color);
+    border-radius: var(--pico-border-radius);
+}
+
+body > header > img.satisfactory-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > header > .title > h1 {
+    color: var(--pico-primary);
+    margin-bottom: 0;
+}
+
+body > header > .title > div {
+    color: var(--pico-muted-color);
+    font-size: 1rem;
+}
+
+body > header > .time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body > header > .time > div:first-child {
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.125;
+    color: var(--pico-primary);
+}
