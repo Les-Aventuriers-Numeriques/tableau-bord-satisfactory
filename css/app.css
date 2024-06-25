@@ -5,6 +5,10 @@
     margin-bottom: 0;
 }
 
+body {
+    padding: var(--pico-grid-row-gap);
+}
+
 /************************************************************************
  * En-tête */
 
@@ -15,10 +19,10 @@ body > header {
     align-items: center;
     column-gap: var(--pico-grid-column-gap);
     row-gap: var(--pico-grid-row-gap);
-    border-bottom: var(--pico-border-width) solid var(--pico-muted-border-color);
-    padding: var(--pico-grid-row-gap);
     white-space: nowrap;
+    padding: 0;
     overflow: hidden;
+    margin-bottom: var(--pico-block-spacing-vertical);
 }
 
 body > header > img.lan-logo {

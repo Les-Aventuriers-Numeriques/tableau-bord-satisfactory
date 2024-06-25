@@ -23,7 +23,7 @@ pour installer les mods Satisfactory sus-cités.
 
 ## Configuration
 
-Configurez votre serveur web afin qu'il fournisse la racine de ce projet sur le port 8080.
+Configurez le serveur web afin qu'il serve la racine de ce projet sur le port 8080.
 
 Configurez le mod Fiscit Remote Monitoring comme suit (voyez sa documentation pour les détails) :
 
@@ -39,5 +39,5 @@ Si le fichier n'existe pas à l'endroit attendu, lancez au moins une fois le jeu
 
 Lancez Satisfactory avec les mods sus-cités activés, chargez votre partie en multijoueur.
 
-À côté, ouvrez un navigateur web sur la page `http://<ip ou nom de l'ordinateur hôte du serveur web>:8080/`. Mettez-le en
+À côté, ouvrez un navigateur web sur la page `http://<nom de l'ordinateur hôte du serveur web>.local:8080/`. Mettez-le en
 plein écran sur un rétroprojecteur, en vous assurant que les sons joués par la page seront audibles par tout le monde.
