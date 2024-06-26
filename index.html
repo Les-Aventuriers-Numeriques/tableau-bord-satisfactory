@@ -21,7 +21,7 @@
             <div>Les Aventuriers Numériques</div>
         </div>
 
-        <img src="/images/satisfactory_logo.png" class="satisfactory-logo" width="530" height="104">
+        <img src="/images/satisfactory_logo.png" class="game-logo" width="530" height="104">
 
         <div>Il reste</div>
 
@@ -43,14 +43,19 @@
         <div>avant la fin du speedrun</div>
     </header>
 
-    <article>
-        <strong>En jeu :</strong> <span>Lan.Epoc</span> • <span>Lan.Korgorr ☠️</span>
-    </article>
+    <section>
+        <article class="players">
+            <header>Joueurs</header>
 
-    <script type="module">
-        import App from '/js/app.js'
+            <p class="list">
+                <span style="color: green">Lan.Epoc</span> <span style="color: red" class="dead">Lan.Korgorr</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span>
+            </p>
 
-        const app = new App()
-    </script>
+            <div class="map"><span style="background-color: green; top: 10px; left: 10px"></span><span style="background-color: red; top: 10px; left: 40px"></span><span style="background-color: blue; top: 40px; left: 80px"></span></div>
+        </article>
+    </section>
+
+    <script defer src="/js/app.js"></script>
+    <script defer src="/js/alpine.min.js"></script>
 </body>
 </html>

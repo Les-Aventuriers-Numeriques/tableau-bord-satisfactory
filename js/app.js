@@ -1,7 +1,13 @@
-import { WebSocket } from './partysocket.js'
+(function () {
+    'use strict';
 
-export default class App {
-    constructor() {
+    class App {
+        constructor() {
 
+        }
     }
-}
+
+    document.addEventListener('alpine:init', function () {
+        const app = new App();
+    });
+})();
