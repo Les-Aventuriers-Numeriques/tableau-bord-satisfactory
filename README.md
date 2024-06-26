@@ -29,7 +29,7 @@ pour installer les mods Satisfactory sus-cités sur l'ordinateur devant héberge
 
 Configurez le serveur web simple afin qu'il serve la racine de ce projet sur le port 8080.
 
-> TODO Config nom ou IP hôte Satisfactory
+> TODO Config nom ou IP hôte Satisfactory dans le JS
 
 Configurez le mod Fiscit Remote Monitoring comme suit (voyez sa [documentation](https://docs.ficsit.app/ficsitremotemonitoring/latest/index.html)
 pour les détails) :

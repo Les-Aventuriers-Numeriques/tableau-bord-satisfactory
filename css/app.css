@@ -41,14 +41,14 @@ body > header > .title > div {
     font-size: 1rem;
 }
 
-body > header > .time {
+body > header > .countdown {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-body > header > .time > div:first-child {
+body > header > .countdown > time {
     font-weight: 700;
     font-size: 2.2rem;
     line-height: 1.125;
