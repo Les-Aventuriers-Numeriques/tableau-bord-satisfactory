@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <header x-data="countdownComponent">
+    <header>
         <img src="/images/logo_120.png" class="lan-logo" width="120" height="120">
 
         <div class="title">
@@ -25,33 +25,41 @@
 
         <div>Il reste</div>
 
-        <div class="countdown">
-            <time x-text="hours">??</time>
-            <div>heures</div>
-        </div>
+        <div class="countdown" x-data="countdownComponent">
+            <div>
+                <time x-text="hours">??</time>
+                <div>heures</div>
+            </div>
 
-        <div class="countdown">
-            <time x-text="minutes">??</time>
-            <div>minutes</div>
-        </div>
+            <div>
+                <time x-text="minutes">??</time>
+                <div>minutes</div>
+            </div>
 
-        <div class="countdown">
-            <time x-text="seconds">??</time>
-            <div>secondes</div>
+            <div>
+                <time x-text="seconds">??</time>
+                <div>secondes</div>
+            </div>
         </div>
 
         <div>avant la fin du speedrun</div>
     </header>
 
     <section>
-        <article class="players">
+        <article class="players" x-data="playersComponent">
             <header>Joueurs</header>
 
-            <p class="list">
-                <span style="color: green">Lan.Epoc</span> <span style="color: red" class="dead">Lan.Korgorr</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span> <span style="color: blue">Lan.Guitouzid</span>
-            </p>
+            <div class="list">
+                <template x-for="player in players">
+                    <span :style="{color: player.color}" :class="{dead: player.isDead}" x-text="player.name">Lan.Korgorr</span>
+                </template>
+            </div>
 
-            <div class="map"><span style="background-color: green; top: 10px; left: 10px"></span><span style="background-color: red; top: 10px; left: 40px"></span><span style="background-color: blue; top: 40px; left: 80px"></span></div>
+            <div class="map">
+                <template x-for="player in players">
+                    <span :style="{'background-color': player.color, top: player.location.y, left: player.location.x}"></span>
+                </template>
+            </div>
         </article>
     </section>
 
