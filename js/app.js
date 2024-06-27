@@ -2,12 +2,14 @@
     'use strict'
 
     const config = {
-        countdownTarget: new Date(2024, 5, 27, 14, 55),
+        testing: true,
+        satisfactoryHost: 'PC-EPOC-MKII.local',
+        countdownTarget: new Date(2024, 5, 30, 14, 55),
     }
 
     function initAlpineComponents() {
         const baseComponent = {
-            refreshInterval: 10,
+            refreshInterval: 5,
             soundsToLoad: [],
 
             intervalId: null,
@@ -36,11 +38,19 @@
             },
 
             playSound(name) {
-               if (!this.sounds.hasOwnProperty(name) || this.sounds[name].readyState != HTMLMediaElement.HAVE_ENOUGH_DATA) {
+               if (!this.sounds.hasOwnProperty(name) || this.sounds[name].readyState !== HTMLMediaElement.HAVE_ENOUGH_DATA) {
                   return
                }
 
                this.sounds[name].play()
+            },
+
+            fetch(endpoint) {
+                const url = config.testing ? `/tests/${endpoint}.json` : `http://${config.satisfactoryHost}:8081/${endpoint}`
+
+                return fetch(url, {cache: 'no-store'}).then(function (response) {
+                    return response.json()
+                })
             }
         }
 
@@ -91,38 +101,34 @@
         Alpine.data('playersComponent', function () {
             return Object.assign(Object.create(baseComponent), {
                 players: [],
-                refreshInterval: 5,
                 soundsToLoad: ['motus-boule-noire'],
 
                 refresh(firstTime = false) {
                     const self = this
 
-                    fetch('/players.json', {cache: 'no-store'})
-                        .then(function (response) {
-                            return response.json()
-                        }).then(function (incomingPlayers) {
-                            self.players = incomingPlayers
-                                .filter(function (incomingPlayer) {
-                                    return !!incomingPlayer.PlayerName
-                                })
-                                .map(function (incomingPlayer) {
-                                    const [r, g, b] = ['R', 'G', 'B'].map(function (attr) {
-                                        return Math.floor(incomingPlayer.TagColor[attr] * 255)
-                                    })
-
-                                    return {
-                                        name: incomingPlayer.PlayerName,
-                                        location: {
-                                            x: '50px', // TODO
-                                            y: '50px' // TODO
-                                        },
-                                        isDead: incomingPlayer.Dead,
-                                        color: `rgb(${r}, ${g}, ${b})`
-                                    }
+                    this.fetch('getPlayer').then(function (incomingPlayers) {
+                        self.players = incomingPlayers
+                            .filter(function (incomingPlayer) {
+                                return !!incomingPlayer.PlayerName
+                            })
+                            .map(function (incomingPlayer) {
+                                const [r, g, b] = ['R', 'G', 'B'].map(function (attr) {
+                                    return Math.floor(incomingPlayer.TagColor[attr] * 255)
                                 })
 
-                            // self.playSound('motus-boule-noire') quand un joueur meurt
-                        })
+                                return {
+                                    name: incomingPlayer.PlayerName,
+                                    location: {
+                                        x: '50px', // TODO
+                                        y: '50px' // TODO
+                                    },
+                                    isDead: incomingPlayer.Dead,
+                                    color: `rgb(${r}, ${g}, ${b})`
+                                }
+                            })
+
+                        // self.playSound('motus-boule-noire') quand un joueur meurt
+                    })
 
                     return true
                 }

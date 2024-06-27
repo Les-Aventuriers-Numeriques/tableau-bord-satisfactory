@@ -1,0 +1,41 @@
+[
+	{
+		"Name": "Space Elevator",
+		"ClassName": "Build_SpaceElevator_C",
+		"location":
+		{
+			"x": -52637.3046875,
+			"y": 221160.65625,
+			"z": -735.436767578125,
+			"rotation": 40
+		},
+		"inventory": [],
+		"PhaseCost": [
+			{
+				"Name": "Smart Plating",
+				"ClassName": "Desc_SpaceElevatorPart_1_C",
+				"Amount": 25
+			}
+		],
+		"FullyUpgraded": false,
+		"UpgradeReady": false,
+		"features":
+		{
+			"properties":
+			{
+				"name": "Space Elevator",
+				"type": "Space Elevator"
+			},
+			"geometry":
+			{
+				"coordinates":
+				{
+					"X": -52637.3046875,
+					"Y": 221160.65625,
+					"Z": -735.436767578125
+				},
+				"type": "Point"
+			}
+		}
+	}
+]

@@ -37,7 +37,6 @@ pour les détails) :
   - WebServer.cfg
     - Web_Autostart = true
     - Listen_IP = "0.0.0.0"
-    - Web_Port = 8181
 
 Si le fichier n'existe pas à l'endroit attendu, lancez au moins une fois le jeu avec les mods sus-cités d'activés.
 
