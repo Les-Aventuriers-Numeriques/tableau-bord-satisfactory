@@ -42,12 +42,53 @@
    },
    {
       "ID": 1,
-      "PlayerName": "porisius",
+      "PlayerName": "Lan.Epoc",
       "ClassName": "",
       "location":
       {
-         "x": -92278.453125,
-         "y": -121765.703125,
+         "x": -125593,
+         "y": 169380,
+         "z": -964.68499755859375,
+         "rotation": 9
+      },
+      "PlayerHP": 100,
+      "Dead": true,
+      "PingTime": 0,
+      "MapArea": "",
+      "TagColor":
+      {
+         "R": 0.9,
+         "G": 0,
+         "B": 0.8,
+         "A": 1
+      },
+      "features":
+      {
+         "properties":
+         {
+            "name": "Lan.Epoc",
+            "type": "Player"
+         },
+         "geometry":
+         {
+            "coordinates":
+            {
+               "X": -236644,
+               "Y": -59300,
+               "Z": -964.68499755859375
+            },
+            "type": "Point"
+         }
+      }
+   },
+   {
+      "ID": 2,
+      "PlayerName": "Lan.Guitouzid",
+      "ClassName": "",
+      "location":
+      {
+         "x": 316300.453125,
+         "y": -133600.703125,
          "z": -984.6280517578125,
          "rotation": 345
       },
@@ -66,7 +107,7 @@
       {
          "properties":
          {
-            "name": "porisius",
+            "name": "Lan.Guitouzid",
             "type": "Player"
          },
          "geometry":

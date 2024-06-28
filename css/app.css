@@ -100,7 +100,6 @@ body > section > .players > .list {
 }
 
 body > section > .players > .list > .dead {
-    color: var(--pico-muted-color) !important;
     text-decoration: line-through;
 }
 

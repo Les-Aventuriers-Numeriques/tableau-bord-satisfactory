@@ -4,12 +4,12 @@
     const config = {
         testing: true,
         satisfactoryHost: 'PC-EPOC-MKII.local',
-        countdownTarget: new Date(2024, 5, 30, 14, 55),
+        countdownTarget: new Date(2024, 5, 28, 20, 0),
     }
 
     function initAlpineComponents() {
         const baseComponent = {
-            refreshInterval: 5,
+            refreshInterval: 3,
             soundsToLoad: [],
 
             intervalId: null,
@@ -113,14 +113,45 @@
                             })
                             .map(function (incomingPlayer) {
                                 const [r, g, b] = ['R', 'G', 'B'].map(function (attr) {
-                                    return Math.floor(incomingPlayer.TagColor[attr] * 255)
+                                    return Math.floor(incomingPlayer.TagColor[attr] * 255) ?? 255
                                 })
+
+                                // -1 px pour la bordure, -2 px pour le milieu
+                                const centerExtra = 3
+
+                                // La carte fait 400x400 pixels
+                                const mapSize = 400
+
+                                // Un pixel = 18,75 m
+                                const onePixel = 1875
+
+                                // L'origine (le point 0,0)
+                                const origin = {
+                                    x: 173,
+                                    y: 200
+                                }
+
+                                let top, left, bottom, right = null
+
+                                if (incomingPlayer.location.x < 0) {
+                                    left = origin.x - (Math.abs(incomingPlayer.location.x) / onePixel) - centerExtra
+                                } else {
+                                    right = mapSize - origin.x - (incomingPlayer.location.x / onePixel) - centerExtra
+                                }
+
+                                if (incomingPlayer.location.y < 0) {
+                                    top = origin.y - (Math.abs(incomingPlayer.location.y) / onePixel) - centerExtra
+                                } else {
+                                    bottom = mapSize - origin.y - (incomingPlayer.location.y / onePixel) - centerExtra
+                                }
 
                                 return {
                                     name: incomingPlayer.PlayerName,
                                     location: {
-                                        x: '50px', // TODO
-                                        y: '50px' // TODO
+                                        top: top ? `${top}px` : null,
+                                        left: left ? `${left}px` : null,
+                                        bottom: bottom ? `${bottom}px` : null,
+                                        right: right ? `${right}px` : null
                                     },
                                     isDead: incomingPlayer.Dead,
                                     color: `rgb(${r}, ${g}, ${b})`

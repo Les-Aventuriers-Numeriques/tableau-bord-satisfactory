@@ -57,7 +57,7 @@
 
             <div class="map">
                 <template x-for="player in players">
-                    <span :style="{'background-color': player.color, top: player.location.y, left: player.location.x}"></span>
+                    <span :style="{'background-color': player.color, top: player.location.top, left: player.location.left, bottom: player.location.bottom, right: player.location.right}"></span>
                 </template>
             </div>
         </article>

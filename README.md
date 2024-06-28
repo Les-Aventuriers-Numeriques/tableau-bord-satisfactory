@@ -9,7 +9,7 @@ attendue étant très limités, les optimisations (et étapes supplémentaires) 
 ## Prérequis
 
   - Un navigateur web moderne
-  - Un serveur web **simple** (par exemple [Static Web Server](https://static-web-server.net/) ou même le serveur HTTP natif de Python)
+  - Un serveur web **simple** (par exemple [Static Web Server](https://static-web-server.net/), [miniserve](https://github.com/svenstaro/miniserve) ou même le serveur HTTP natif de Python)
   - [Satisfactory](https://www.satisfactorygame.com/), avec les mods [Fiscit Remote Monitoring](https://ficsit.app/mod/FicsitRemoteMonitoring) et [Production Stats](https://ficsit.app/mod/3tsvcG3A6gqKX1)
 
 La configuration matérielle idéale est un ordinateur sur lequel la partie Satisfactory est hébergée, et un autre (par
@@ -20,16 +20,16 @@ local.
 
 ## Installation
 
-Clonez ce dépôt sur l'ordinateur devant héberger le serveur web simple.
+Clonez ce dépôt sur l'ordinateur devant héberger le serveur web.
 
 Utilisez [Satisfactory Mod Manager](https://docs.ficsit.app/satisfactory-modding/latest/ForUsers/SatisfactoryModManager.html)
 pour installer les mods Satisfactory sus-cités sur l'ordinateur devant héberger la partie.
 
 ## Configuration
 
-Configurez le serveur web simple afin qu'il serve la racine de ce projet sur le port 8080.
+Midifier la variable `config` (en haut) dans le fichier `js/app.js` afin qu'il corresponde à vos besoins.
 
-> TODO Config nom ou IP hôte Satisfactory dans le JS
+Configurez le serveur web afin qu'il serve la racine de ce projet sur le port 8080.
 
 Configurez le mod Fiscit Remote Monitoring comme suit (voyez sa [documentation](https://docs.ficsit.app/ficsitremotemonitoring/latest/index.html)
 pour les détails) :
