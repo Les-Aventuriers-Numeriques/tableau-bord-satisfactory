@@ -2,9 +2,18 @@
     'use strict'
 
     const config = {
-        testing: true,
-        satisfactoryHost: 'PC-EPOC-MKII.local',
+        testing: true, // Mode test activé ou non
+        satisfactoryHost: 'PC-EPOC-MKII.local', // Hôte ou IP de l'ordinateur hébergeant la partie Satisfactory
         countdownTarget: new Date(2024, 5, 28, 20, 0),
+        map: {
+            centerExtra: 4, // Pour le milieu du marqueur (9x9 px)
+            size: 400, // La carte fait 400x400 pixels
+            onePixel: 1875, // Un pixel = 18,75 m
+            origin: { // L'origine (le point 0,0)
+                x: 173,
+                y: 200
+            }
+        }
     }
 
     function initAlpineComponents() {
@@ -60,16 +69,11 @@
                 minutes: '??',
                 seconds: '??',
                 refreshInterval: 1,
-                soundsToLoad: ['bien-joue'],
 
                 refresh(firstTime = false) {
                     const remaining = config.countdownTarget.getTime() - new Date().getTime()
 
                     if (remaining < 0) {
-                        if (!firstTime) {
-                            this.playSound('bien-joue') // TODO Changer le son en corne de brume
-                        }
-
                         this.hours = 0
                         this.minutes = 0
                         this.seconds = 0
@@ -82,16 +86,6 @@
                     this.hours = Math.floor(secondsRemaining / 3600)
                     this.minutes = Math.floor((secondsRemaining % 3600) / 60)
                     this.seconds = Math.floor(secondsRemaining % 60)
-
-                    // this.playSound('') quand compte à rebours à 1 heure
-                    // this.playSound('') quand compte à rebours à 30 minutes
-                    // this.playSound('') quand compte à rebours à 15 minutes
-                    // this.playSound('') quand compte à rebours à 1 minute
-                    // this.playSound('') quand compte à rebours à 5 secondes
-                    // this.playSound('') quand compte à rebours à 4 secondes
-                    // this.playSound('') quand compte à rebours à 3 secondes
-                    // this.playSound('') quand compte à rebours à 2 secondes
-                    // this.playSound('') quand compte à rebours à 1 seconde
 
                     return true
                 }
@@ -116,33 +110,18 @@
                                     return Math.floor(incomingPlayer.TagColor[attr] * 255) ?? 255
                                 })
 
-                                // -1 px pour la bordure, -2 px pour le milieu
-                                const centerExtra = 3
-
-                                // La carte fait 400x400 pixels
-                                const mapSize = 400
-
-                                // Un pixel = 18,75 m
-                                const onePixel = 1875
-
-                                // L'origine (le point 0,0)
-                                const origin = {
-                                    x: 173,
-                                    y: 200
-                                }
-
                                 let top, left, bottom, right = null
 
                                 if (incomingPlayer.location.x < 0) {
-                                    left = origin.x - (Math.abs(incomingPlayer.location.x) / onePixel) - centerExtra
+                                    left = config.map.origin.x - (Math.abs(incomingPlayer.location.x) / config.map.onePixel) - config.map.centerExtra
                                 } else {
-                                    right = mapSize - origin.x - (incomingPlayer.location.x / onePixel) - centerExtra
+                                    right = config.map.size - config.map.origin.x - (incomingPlayer.location.x / config.map.onePixel) - config.map.centerExtra
                                 }
 
                                 if (incomingPlayer.location.y < 0) {
-                                    top = origin.y - (Math.abs(incomingPlayer.location.y) / onePixel) - centerExtra
+                                    top = config.map.origin.y - (Math.abs(incomingPlayer.location.y) / config.map.onePixel) - config.map.centerExtra
                                 } else {
-                                    bottom = mapSize - origin.y - (incomingPlayer.location.y / onePixel) - centerExtra
+                                    bottom = config.map.size - config.map.origin.y - (incomingPlayer.location.y / config.map.onePixel) - config.map.centerExtra
                                 }
 
                                 return {
