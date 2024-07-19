@@ -4,12 +4,11 @@
     const config = {
         testing: true, // Mode test activé ou non
         satisfactoryHost: 'PC-EPOC-MKII.local', // Hôte ou IP de l'ordinateur hébergeant la partie Satisfactory
-        countdownTarget: new Date(2024, 5, 28, 20, 0),
         map: {
-            centerExtra: 4, // Pour le milieu du marqueur (9x9 px)
+            centerExtra: 4, // Le milieu des marqueurs des joueurs (ils font 9x9 px)
             size: 400, // La carte fait 400x400 pixels
             onePixel: 1875, // Un pixel = 18,75 m
-            origin: { // L'origine (le point 0,0)
+            origin: { // L'origine (le point 0,0), en pixels depuis en haut à droite
                 x: 173,
                 y: 200
             }
@@ -62,35 +61,6 @@
                 })
             }
         }
-
-        Alpine.data('countdownComponent', function () {
-            return Object.assign(Object.create(baseComponent), {
-                hours: '??',
-                minutes: '??',
-                seconds: '??',
-                refreshInterval: 1,
-
-                refresh(firstTime = false) {
-                    const remaining = config.countdownTarget.getTime() - new Date().getTime()
-
-                    if (remaining < 0) {
-                        this.hours = 0
-                        this.minutes = 0
-                        this.seconds = 0
-
-                        return false
-                    }
-
-                    const secondsRemaining = Math.floor(remaining / 1000)
-
-                    this.hours = Math.floor(secondsRemaining / 3600)
-                    this.minutes = Math.floor((secondsRemaining % 3600) / 60)
-                    this.seconds = Math.floor(secondsRemaining % 60)
-
-                    return true
-                }
-            })
-        })
 
         Alpine.data('playersComponent', function () {
             return Object.assign(Object.create(baseComponent), {

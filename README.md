@@ -3,8 +3,15 @@
 Le tableau de bord utilisé lors du speedrun [Satisfactory](https://www.satisfactorygame.com/) pendant la
 [LAN annuelle](https://team-lan.org/lan) 2024 de la team multigaming Les Aventuriers Numériques.
 
-Il s'agit d'un site statique purement frontend, sans backend ni générateur de site statique. Le trafic et l'audience
-attendue étant très limités, les optimisations (et étapes supplémentaires) habituelles ne sont pas nécessaires.
+Il s'agit d'un site statique purement frontend, sans backend ni générateur de site statique ni gestionnaire de package.
+Le trafic et l'audience attendus étant très limités, les optimisations (et étapes supplémentaires) habituelles ne sont
+pas nécessaires.
+
+Il permet, en quasi temps réel :
+
+  - De visualiser la position des joueurs sur une carte
+  - D'afficher sur un graphique des stats sur la production d'électricité
+  - De visualiser l'état - et l'avancement - de l'ascenseur spacial et du hub, avec la production des objets actuellement requis
 
 ## Prérequis
 
@@ -27,7 +34,7 @@ pour installer les mods Satisfactory sus-cités sur l'ordinateur devant héberge
 
 ## Configuration
 
-Midifier la variable `config` (en haut) dans le fichier `js/app.js` afin qu'il corresponde à vos besoins.
+Modifiez la variable `config` dans le fichier `js/app.js` (en haut) afin qu'il corresponde à vos besoins.
 
 Configurez le serveur web afin qu'il serve la racine de ce projet sur le port 8080.
 
