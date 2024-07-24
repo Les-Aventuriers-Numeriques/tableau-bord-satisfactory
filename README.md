@@ -1,13 +1,15 @@
-# Les Aventuriers Numériques / Speedrun Satisfactory
+# Les Aventuriers Numériques / Tableau de bord Satisfactory
 
-Le tableau de bord utilisé lors du speedrun [Satisfactory](https://www.satisfactorygame.com/) pendant la
-[LAN annuelle](https://team-lan.org/lan) 2024 de la team multigaming Les Aventuriers Numériques.
+Un tableau de bord web pour [Satisfactory](https://www.satisfactorygame.com/).
+
+Il a été utilisé lors du speedrun Satisfactory pendant la [LAN annuelle](https://team-lan.org/lan) 2024 de la team
+multigaming Les Aventuriers Numériques, mais il peut être utilisé pour n'importe quelle autre occasion.
 
 Il s'agit d'un site statique purement frontend, sans backend ni générateur de site statique ni gestionnaire de package.
-Le trafic et l'audience attendus étant très limités, les optimisations (et étapes supplémentaires) habituelles ne sont
-pas nécessaires.
+Le trafic et l'audience sensés utiliser cette appli web étant très limités, les optimisations (et étapes supplémentaires)
+habituelles ne sont pas nécessaires.
 
-Il permet, en quasi temps réel :
+Ce tableau de bord permet, en quasi-temps réel :
 
   - De visualiser la position des joueurs sur une carte
   - D'afficher sur un graphique des stats sur la production d'électricité
