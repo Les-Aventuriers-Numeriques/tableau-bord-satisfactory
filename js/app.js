@@ -41,7 +41,7 @@
                 const self = this
 
                 this.soundsToLoad.forEach(function (name) {
-                    self.sounds[name] = new Audio(`/sounds/${name}.mp3`)
+                    self.sounds[name] = new Audio(`/audio/${name}.mp3`)
                 })
             },
 
