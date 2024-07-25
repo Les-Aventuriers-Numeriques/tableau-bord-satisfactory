@@ -80,7 +80,6 @@ body > section {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
     column-gap: var(--pico-grid-column-gap);
     row-gap: var(--pico-grid-row-gap);
 }
@@ -121,4 +120,11 @@ body > section > .players > .map > span {
     height: 9px;
     border-radius: 50%;
     border: 1px solid #fff;
+}
+
+/************************************************************************
+ * Bloc Electricité */
+
+body > section > .power {
+    flex-grow: 1;
 }
