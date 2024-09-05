@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://team-lan.org/images/logo_full_dark.png">
+    <img src="https://team-lan.org/images/logo_full_light.png">
+  </picture>
+</p>
+
 # Les Aventuriers Numériques / Tableau de bord Satisfactory
 
 Un tableau de bord web pour [Satisfactory](https://www.satisfactorygame.com/).
