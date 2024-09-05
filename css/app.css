@@ -5,6 +5,10 @@ body {
     padding: var(--pico-grid-row-gap);
 }
 
+img {
+    box-sizing: content-box;
+}
+
 /************************************************************************
  * En-tête */
 
