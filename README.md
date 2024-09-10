@@ -12,9 +12,7 @@ Un tableau de bord web pour [Satisfactory](https://www.satisfactorygame.com/).
 Il a été utilisé lors du speedrun Satisfactory pendant la [LAN annuelle](https://team-lan.org/lan) 2024 de la team
 multigaming Les Aventuriers Numériques, mais il peut être utilisé pour n'importe quelle autre occasion.
 
-Il s'agit d'un site statique purement frontend, sans backend ni générateur de site statique ni gestionnaire de package.
-Le trafic et l'audience sensés utiliser cette appli web étant très limités, les optimisations (et étapes supplémentaires)
-habituelles ne sont pas nécessaires.
+Il s'agit d'un site statique purement frontend généré à l'aide de [Vite](https://vitejs.dev/).
 
 Ce tableau de bord permet, en quasi-temps réel :
 
@@ -24,6 +22,7 @@ Ce tableau de bord permet, en quasi-temps réel :
 
 ## Prérequis
 
+  - Node >= 18 et NPM
   - Un navigateur web moderne
   - Un serveur web **simple** (par exemple [Static Web Server](https://static-web-server.net/), [miniserve](https://github.com/svenstaro/miniserve) ou même le serveur HTTP natif de Python)
   - [Satisfactory](https://www.satisfactorygame.com/), avec les mods [Fiscit Remote Monitoring](https://ficsit.app/mod/FicsitRemoteMonitoring) et [Production Stats](https://ficsit.app/mod/3tsvcG3A6gqKX1)
