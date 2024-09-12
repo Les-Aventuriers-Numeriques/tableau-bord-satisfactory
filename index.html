@@ -9,9 +9,7 @@
 
     <link rel="icon" href="/favicon.ico" sizes="32x32 48x48">
 
-    <link rel="stylesheet" href="/css/pico.orange.min.css">
-    <link rel="stylesheet" href="/css/uPlot.min.css">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body>
     <header>
@@ -26,7 +24,7 @@
     </header>
 
     <section>
-        <article class="players" x-data="playersComponent">
+        <article class="players" x-data="players">
             <header>Joueurs</header>
 
             <div class="list">
@@ -44,12 +42,10 @@
         <article class="power">
             <header>Electricité</header>
 
-            <div x-data="powerChartComponent"></div>
+            <div x-data="powerChart"></div>
         </article>
     </section>
 
-    <script defer src="/js/app.js"></script>
-    <script defer src="/js/uPlot.iife.min.js"></script>
-    <script defer src="/js/alpine.min.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
 </body>
 </html>
