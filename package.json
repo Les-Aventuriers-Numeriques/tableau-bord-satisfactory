@@ -1,0 +1,20 @@
+{
+  "name": "tableau-bord-satisfactory",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.80.1",
+    "vite": "^5.4.9"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "alpinejs": "^3.14.3",
+    "uplot": "~1.6"
+  }
+}
