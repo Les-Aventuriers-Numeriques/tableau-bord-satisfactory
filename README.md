@@ -24,14 +24,13 @@ Ce tableau de bord permet, en quasi-temps réel :
 
   - Node >= 18 et NPM
   - Un navigateur web moderne
-  - Un serveur web **simple** (par exemple [Static Web Server](https://static-web-server.net/), [miniserve](https://github.com/svenstaro/miniserve) ou même le serveur HTTP natif de Python)
+  - Un serveur web **simple** (par exemple [Static Web Server](https://static-web-server.net/), [miniserve](https://github.com/svenstaro/miniserve) ou même `vite preview`)
   - [Satisfactory](https://www.satisfactorygame.com/), avec les mods [Fiscit Remote Monitoring](https://ficsit.app/mod/FicsitRemoteMonitoring) et [Production Stats](https://ficsit.app/mod/3tsvcG3A6gqKX1)
 
 La configuration matérielle idéale est un ordinateur sur lequel la partie Satisfactory est hébergée, et un autre (par
-exemple un laptop) sur lequel tourne le serveur web servant ce projet, lui-même branché à des hauts-parleurs (des sons
-rigolos sont joués à des moments précis) et à un rétroprojecteur (le tableau de bord affiché est optimisé pour le plein
-écran). Le laptop récupérerait les informations depuis l'ordinateur hébergeant la partie Satisfactory à travers le réseau
-local.
+exemple un laptop) sur lequel tourne le serveur web servant ce projet et à un rétroprojecteur (le tableau de bord affiché
+est optimisé pour le plein écran). Le laptop récupérerait les informations depuis l'ordinateur hébergeant la partie
+Satisfactory à travers le réseau local.
 
 ## Installation
 
@@ -60,4 +59,4 @@ Si le fichier n'existe pas à l'endroit attendu, lancez au moins une fois le jeu
 Lancez Satisfactory avec les mods sus-cités activés, chargez votre partie en multijoueur.
 
 À côté, ouvrez un navigateur web, sur l'ordinateur qui héberge le serveur web, pointant vers la page. Mettez-le en
-plein écran sur le rétroprojecteur, en vous assurant que les sons joués par la page seront audibles par tout le monde.
+plein écran sur le rétroprojecteur.

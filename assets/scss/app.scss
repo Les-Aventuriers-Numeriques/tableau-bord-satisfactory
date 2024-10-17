@@ -1,0 +1,141 @@
+@use "@picocss/pico/scss/pico" with (
+    $theme-color: "orange"
+);
+
+/************************************************************************
+ * Styles globaux */
+
+img {
+    box-sizing: content-box;
+}
+
+body {
+    padding: var(--pico-grid-row-gap);
+
+    /************************************************************************
+    * En-tête */
+    > header {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        column-gap: var(--pico-grid-column-gap);
+        row-gap: var(--pico-grid-row-gap);
+        white-space: nowrap;
+        padding: 0;
+        overflow: hidden;
+        margin-bottom: var(--pico-block-spacing-vertical);
+
+        > img {
+            &.lan-logo {
+                border: var(--pico-border-width) solid var(--pico-muted-border-color);
+                border-radius: var(--pico-border-radius);
+            }
+
+            &.game-logo {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        > .title {
+            > h1 {
+                color: var(--pico-primary);
+                margin-bottom: 0;
+            }
+
+            > div {
+                color: var(--pico-muted-color);
+                font-size: 1rem;
+            }
+        }
+
+        > .countdown {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            column-gap: var(--pico-grid-column-gap);
+            row-gap: var(--pico-grid-row-gap);
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                > time {
+                    font-weight: 700;
+                    font-size: 2.2rem;
+                    line-height: 1.125;
+                    color: var(--pico-primary);
+                }
+            }
+        }
+    }
+
+    /************************************************************************
+     * Contenu */
+    article {
+        margin-bottom: 0;
+
+        > header {
+            font-weight: bolder;
+        }
+    }
+
+    > section {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        column-gap: var(--pico-grid-column-gap);
+        row-gap: var(--pico-grid-row-gap);
+    }
+
+    > section {
+        /************************************************************************
+        * Bloc Joueurs */
+        > .players {
+            > .list {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: start;
+                align-items: center;
+                column-gap: 0.5rem;
+                row-gap: 0.5rem;
+                margin-bottom: var(--pico-spacing);
+
+                > .dead {
+                    text-decoration: line-through;
+                }
+            }
+
+            > .map {
+                width: 400px;
+                height: 400px;
+                background-image: url("/images/map.png");
+                background-repeat: no-repeat;
+                position: relative;
+                border: 1px solid var(--pico-muted-border-color);
+                border-radius: var(--pico-border-radius);
+                box-sizing: content-box;
+                background-clip: content-box;
+
+                > span {
+                    position: absolute;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                }
+            }
+        }
+
+        /************************************************************************
+        * Bloc Electricité */
+        > .power {
+            flex-grow: 1;
+        }
+    }
+}
